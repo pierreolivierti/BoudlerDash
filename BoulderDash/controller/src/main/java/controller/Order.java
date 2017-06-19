@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package controller;
 
 public enum Order {
@@ -6,3 +7,15 @@ public enum Order {
 	S,
 	D,
 }
+=======
+package controller;
+
+public enum Order {
+	W,
+	A,
+	S,
+	D,
+	E,
+	F,
+}
+>>>>>>> origin/master
