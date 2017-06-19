@@ -5,6 +5,4 @@ public enum Order {
 	A,
 	S,
 	D,
-	E,
-	F,
 }
