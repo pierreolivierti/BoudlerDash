@@ -15,5 +15,5 @@ public class GamePanel {
 	
 	public void update(Observable observable){
 		
-	}
+	} 
 }

@@ -11,14 +11,14 @@ public class GameFrame implements KeyListener{
 		}
 		
 		public void keyPressed(KeyEvent keyEvent){
-			
+			int key = e.getKeyCode();
 		}
 		
 		public void keyReleased(KeyEvent keyEvent){
-			
+			int key = e.getKeyCode();
 		}
 		
 		public void keyTyped(KeyEvent keyEvent){
-			
+			int key = e.getKeyCode();
 		}
 }
