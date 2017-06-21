@@ -1,8 +1,12 @@
 package view;
 
-public class GameFrame {
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.Observable;
 
-		public GameFrame(String title, IEventPerformer performer, IGraphicsBuilder graphicBuilder, Observable observable){
+public class GameFrame implements KeyListener{
+
+		public GameFrame(String title, IEventPerformer performer, IGraphicsBuilder graphicsBuilder, Observable observable){
 			
 		}
 		
@@ -10,7 +14,7 @@ public class GameFrame {
 			
 		}
 		
-		public void keyReleased(KeyEvent keyEvent ){
+		public void keyReleased(KeyEvent keyEvent){
 			
 		}
 		
