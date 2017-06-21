@@ -2,14 +2,13 @@ package controller;
 
 import java.sql.SQLException;
 import java.io.IOException;
-
-
 import java.util.List;
 
 import model.Example;
 import model.IModel;
 import view.IView;
 import controller.UserOrder;
+import 
 
 
 /**
@@ -19,21 +18,8 @@ import controller.UserOrder;
  * @version 1.0
  */
 public class ControllerFacade implements IController {
-
-    /** The view. */
     private final IView  view;
-
-    /** The model. */
     private final IModel model;
-
-    /**
-     * Instantiates a new controller facade.
-     *
-     * @param view
-     *            the view
-     * @param model
-     *            the model
-     */
     private boolean isGameOver = false;
     private static int SLEEP_TIME = 100;
     
@@ -43,22 +29,12 @@ public class ControllerFacade implements IController {
         this.model = model;
     }
 
-    /**
-     * Start.
-     *
-     * @throws SQLException
-     *             the SQL exception
-     */
     public void start() throws SQLException {
-    	
     	this.gameLoop();
     	this.view.displayMessage("Game Over...");
     	this.view.closeAll();
-    	
         this.getView().displayMessage(this.getModel().getExampleById(1).toString());
-
         this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
-
         final List<Example> examples = this.getModel().getAllExamples();
         final StringBuilder message = new StringBuilder();
         // a.append(" bar);
@@ -68,12 +44,6 @@ public class ControllerFacade implements IController {
         }
         this.getView().displayMessage(message.toString());
     }
-
-    /**
-     * Gets the view.
-     *
-     * @return the view
-     */
     public IView getView() {
         return this.view;
     }
