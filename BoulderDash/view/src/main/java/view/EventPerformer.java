@@ -6,7 +6,7 @@ import controller.IController;
 import controller.Order;
 import controller.UserOrder;
 
-public class EventPerformer implements IEventperformer{
+public class EventPerformer implements IEventPerformer{
 	private IController orderPerformer;
 
 	public EventPerformer(IController orderPerformer){

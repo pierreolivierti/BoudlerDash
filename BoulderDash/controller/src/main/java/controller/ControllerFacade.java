@@ -9,6 +9,7 @@ import java.util.List;
 import model.Example;
 import model.IModel;
 import view.IView;
+import controller.UserOrder;
 
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
@@ -94,9 +95,10 @@ public class ControllerFacade implements IController {
     		}
     	}
     }
+    
     @Override
     public void orderPerform(UserOrder userOrder) {
-    	if userOrder != null {
+    	if (userOrder != null) {
     		Direction direction;
     		switch (userOrder.getOrder()) {
     		case UP:
