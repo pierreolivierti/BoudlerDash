@@ -11,6 +11,7 @@ import model.IModel;
 import view.IView;
 import controller.UserOrder;
 
+
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
  *
@@ -120,9 +121,3 @@ public class ControllerFacade implements IController {
     	}
     }
 }
-<<<<<<< HEAD
-
-//commit1
-=======
->>>>>>> origin/master
-//test

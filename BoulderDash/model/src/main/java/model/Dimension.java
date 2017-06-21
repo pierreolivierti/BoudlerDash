@@ -3,10 +3,9 @@ package model;
 public class Dimension {
 	private int width;
 	private int height;
-	private Dimension dimension;
 	
 	public Dimension(Dimension dimension) {
-		this.dimension = dimension;
+		this(dimension.getWidth(), dimension.getHeight());
 	}
 	
 	public Dimension(int width, int height) {
