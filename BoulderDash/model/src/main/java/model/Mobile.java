@@ -6,7 +6,7 @@ public class Mobile implements IMobile {
 	private IModelFacade model;
 	private String image;
 	private Position position;
-	private int speed = 4;
+	private int speed;
 	
 	public Mobile(Direction direction, Position position, Dimension dimension, int speed, String image) {
 		this.direction = direction;
