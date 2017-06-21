@@ -2,13 +2,14 @@ package view;
 
 import java.awt.event.KeyEvent;
 
-import controller.IControllerFacade;
+import controller.IController;
 import controller.Order;
 import controller.UserOrder;
 
 public class EventPerformer implements IEventperformer{
+	private IController orderPerformer;
 
-	public EventPerformer(IControllerFacade orderPerformer){
+	public EventPerformer(IController orderPerformer){
 		this.orderPerformer = orderPerformer;
 	} 
 	
