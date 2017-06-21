@@ -1,7 +1,5 @@
 package model;
 
-import java.awt.Image;
-
 public interface IMobile {
 	public Direction getDirection();
 	public void setDirection(Direction direction);
@@ -10,8 +8,8 @@ public interface IMobile {
 	public int getWidth();
 	public int getHeight();
 	public int getSpeed();
-	public Image getImage();
+	public String getImage();
 	public void move();
 	public void placeInArea(IArea area);
-	public void setModel(ModelFacade model);
+	public void setModel(IModelFacade model);
 }
