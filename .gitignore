@@ -10,3 +10,11 @@ BoulderDash/vpp/BoulderDash.vpp
 BoulderDash/vpp/BoulderDash.vpp
 
 .DS_Store
+
+*.bak_000f
+
+*.lck
+
+*.bak_000f
+
+*.bak_000f
