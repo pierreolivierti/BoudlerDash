@@ -118,5 +118,9 @@ public class ControllerFacade implements IController {
     	}
     }
 }
+<<<<<<< HEAD
 
 //commit1
+=======
+>>>>>>> origin/master
+//test

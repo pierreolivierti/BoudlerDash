@@ -1,6 +1,7 @@
 package controller;
 
 public enum Order {
+<<<<<<< HEAD
 	UP,
 	LEFT,
 	DOWN,
@@ -8,3 +9,10 @@ public enum Order {
 
 }
 //commit1
+=======
+	W,
+	A,
+	S,
+	D,
+}
+>>>>>>> origin/master
