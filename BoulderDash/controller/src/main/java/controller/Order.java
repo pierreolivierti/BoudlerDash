@@ -1,10 +1,9 @@
 package controller;
 
 public enum Order {
-	W,
-	A,
-	S,
-	D,
-	E,
-	F,
+	UP,
+	LEFT,
+	DOWN,
+	Right,
+
 }

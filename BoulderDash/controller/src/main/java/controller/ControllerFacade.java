@@ -1,6 +1,9 @@
 package controller;
 
 import java.sql.SQLException;
+import java.io.IOException;
+
+
 import java.util.List;
 
 import model.Example;
@@ -29,6 +32,9 @@ public class ControllerFacade implements IController {
      * @param model
      *            the model
      */
+    private boolean isGameOver = false;
+    private static int SLEEP_TIME = 100;
+    
     public ControllerFacade(final IView view, final IModel model) {
         super();
         this.view = view;
@@ -42,6 +48,11 @@ public class ControllerFacade implements IController {
      *             the SQL exception
      */
     public void start() throws SQLException {
+    	
+    	this.gameLoop();
+    	this.view.displayMessage("Game Over...");
+    	this.view.closeAll();
+    	
         this.getView().displayMessage(this.getModel().getExampleById(1).toString());
 
         this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
@@ -73,5 +84,37 @@ public class ControllerFacade implements IController {
     public IModel getModel() {
         return this.model;
     }
+    
+    private void gameLoop() {
+    	while (!this.isGameOver) {
+    		try {
+    			Thread.sleep(SLEEP_TIME);
+    		} catch (final InterruptedException ex) {
+    			Thread.currentThread().interrupt();
+    		}
+    	}
+    }
+    @Override
+    public void orderPerform(UserOrder userOrder) {
+    	if userOrder != null {
+    		Direction direction;
+    		switch (userOrder.getOrder()) {
+    		case UP:
+    			direction = Direction.UP;
+    			break;
+    		case RIGHT:
+    			direction = Direction.RIGHT;
+    			break;
+    		case DOWN:
+    			direction = Direction.DOWN;
+    			break;
+    		case LEFT:
+    			direction = Direction.LEFT;
+    			break;
+    		default:
+    			break;
+    		}
+    		player.setDirection(direction);
+    	}
+    }
 }
-//caca
