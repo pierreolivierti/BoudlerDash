@@ -32,14 +32,6 @@ public class Mobile implements IMobile {
 		return this.dimension;
 	}
 	
-	public int getWidth() {
-		return this.WIDTH;
-	}
-	
-	public int getHeight() {
-		return this.HEIGHT;
-	}
-	
 	public int getSpeed() {
 		return this.speed;
 	}

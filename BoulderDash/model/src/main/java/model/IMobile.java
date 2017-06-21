@@ -5,8 +5,6 @@ public interface IMobile {
 	public void setDirection(Direction direction);
 	public Dimension getDimension();
 	public Position getPosition();
-	public int getWidth();
-	public int getHeight();
 	public int getSpeed();
 	public String getImage();
 	public void move();
