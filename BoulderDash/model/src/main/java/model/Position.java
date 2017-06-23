@@ -1,10 +1,10 @@
 package model;
 
 public class Position {
-	private double x;
-	private double y;
-	private double maxX = 1;
-	private double maxY = 1;
+	private int x;
+	private int y;
+	private int maxX = 1;
+	private int maxY = 1;
 	private Position position;
 	
 	public Position(int x, int y) {
@@ -28,7 +28,7 @@ public class Position {
 		return this.x;
 	}
 	
-	public void setX(double x) {
+	public void setX(int x) {
 		this.x = x;
 	}
 	
@@ -36,7 +36,7 @@ public class Position {
 		return this.y;
 	}
 	
-	public void setY(double y) {
+	public void setY(int y) {
 		this.y = y;
 	}
 	
@@ -44,7 +44,7 @@ public class Position {
 		return this.maxX;
 	}
 	
-	protected void setMaxX(double maxX) {
+	protected void setMaxX(int maxX) {
 		this.maxX = maxX;
 	}
 	
@@ -52,7 +52,7 @@ public class Position {
 		return this.maxY;
 	}
 	
-	protected void setMaxY(double maxY) {
+	protected void setMaxY(int maxY) {
 		this.maxY = maxY;
 	}
 }

@@ -1,11 +1,8 @@
 package model;
 
 public class Stone extends Mobile {
-	private static int WIDTH = 16;
-	private static int HEIGHT = 16;
-	private static int SPEED = 4;
-	private static String image = "stone.jpg";
-	private Position position;
+	private static int imgPosX = 13;
+	private static int imgPosY = 1;
 	
 	public Stone(Position position) { 
 		super(Direction.DOWN, position, new Dimension(WIDTH, HEIGHT), SPEED, image);

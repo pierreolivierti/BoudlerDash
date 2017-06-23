@@ -1,36 +1,52 @@
 package model;
 
-public class Player extends Mobile {
-	private static int WIDTH = 16;
-	private static int HEIGHT = 16;
-	private static int SPEED = 4;
-	private static String image = "player.jpg";
-	private int score = 0;
+public class Player extends BoudlerDashElement {
+	private static int imgPosX = 2;
+	private static int imgPosY = 2;
 	private Direction direction;
 	private Position position;
+	private static int x;
+	private static int y;
 	
-	public Player(Direction direction, Position position) {
-		super(direction, position, new Dimension(WIDTH, HEIGHT), SPEED, image);
+	public Player(Position position, Direction direction) {
+		super(position, imgPosX, imgPosY);
 		this.position = position;
 		this.direction = direction;
 	}
 	
 	public void move() {
-		//////////////////////////////////
-		// Check if there is wall before//
-		//////////////////////////////////
-		if (this.direction == Direction.UP) {
-			this.position.setY(this.position.getY()+1);
-		} else if (this.direction == Direction.DOWN) {
-			this.position.setY(this.position.getY()-1);
-		} else if (this.direction == Direction.RIGHT) {
-			this.position.setX(this.position.getX()+1);
-		} else if (this.direction == Direction.LEFT) {
-			this.position.setX(this.position.getX()-1);
+		switch(this.direction) {
+		case UP:
+			this.moveUp(this.position);
+			break;
+		
+		case DOWN:
+			this.moveDown(this.position);
+			break;
+			
+		case RIGHT:
+			this.moveRight(this.position);
+			break;
+			
+		case LEFT:
+			this.moveLeft(this.position);
+			break;
 		}
 	}
 	
-	public void addDiamondToScore() {
-		this.score++;
+	public void moveUp(Position position) {
+		
+	}
+	
+	public void moveDown(Position position) {
+		
+	}
+
+	public void moveRight(Position position) {
+	
+	}
+
+	public void moveLeft(Position position) {
+	
 	}
 }

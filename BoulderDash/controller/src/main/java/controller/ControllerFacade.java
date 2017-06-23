@@ -1,13 +1,9 @@
 package controller;
 
 import java.sql.SQLException;
-import java.io.IOException;
-import java.util.List;
 
-import model.Example;
 import model.IModel;
 import view.IView;
-import controller.UserOrder; 
 
 
 /**
@@ -23,7 +19,7 @@ public class ControllerFacade implements IController {
     private static int SLEEP_TIME = 100;
     
     public ControllerFacade(final IView view, final IModel model) {
-        super();
+        //super();
         this.view = view;
         this.model = model;
     }
@@ -32,44 +28,33 @@ public class ControllerFacade implements IController {
     	this.gameLoop();
     	this.view.displayMessage("Game Over...");
     	this.view.closeAll();
-        this.getView().displayMessage(this.getModel().getExampleById(1).toString());
-        this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
-        final List<Example> examples = this.getModel().getAllExamples();
-        final StringBuilder message = new StringBuilder();
-        // a.append(" bar);
-        for (final Example example : examples) {
-            message.append(example);
-            message.append('\n');
-        }
-        this.getView().displayMessage(message.toString());
     }
+    
     public IView getView() {
-        return this.view;
+    	return this.view;
+ 
     }
-
-    /**
-     * Gets the model.
-     *
-     * @return the model
-     */
+    
     public IModel getModel() {
-        return this.model;
+    	return this.model;
+    }
+    
+    public void setView() {
+    	
     }
     
     private void gameLoop() {
     	while (!this.isGameOver) {
     		try {
     			Thread.sleep(SLEEP_TIME);
-    		} catch (final InterruptedException ex) {
+    		} catch (InterruptedException e) {
     			Thread.currentThread().interrupt();
     		}
     	}
     }
     
     public void orderPerform(UserOrder userOrder) {
-    	if (userOrder != null) {
-    		final IMobile plane = this.model.get
-    		final IMobile plane = this.model.get
+    	if(userOrder != null) {
     	}
     }
 }

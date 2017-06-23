@@ -7,7 +7,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class BoulderDashElement implements IBoulderDashElement {
-	private IArea area;
+	private Mobile mobile;
+	private MapArray map;
 	private Position position;
 	protected BufferedImage image;
 	private IModel model;

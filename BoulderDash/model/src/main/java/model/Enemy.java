@@ -1,18 +1,16 @@
 package model;
 
-public class Ennemy extends Mobile {
-	private static int WIDTH = 16;
-	private static int HEIGHT = 16;
-	private static int SPEED = 4;
-	private static String image = "ennemy.jpg";
-	private Position position;
-	private Direction direction;
+public class Enemy extends Mobile {
+	private static int imgPosX = 16;
+	private static int imgPosY = 1;
+	private int x;
+	private int y;
 	private boolean isDead;
 	
-	public Ennemy(Direction direction, Position position, boolean isDead) {
-		super(direction, position, new Dimension(WIDTH, HEIGHT), SPEED, image);
-		this.position = position;
-		this.direction = direction;
+	public Enemy(Position position, MapArray map) {
+		super(position,imgPosX, imgPosY);
+		this.x = position.getX()
+		this.y = position.getY()
 		this.isDead = isDead;
 	}
 	
