@@ -1,6 +1,6 @@
 package model;
 
-public class Static implements IStatic {
+public class Static implements IElement {
 	private Position position;
 	private Dimension dimension;
 	private String image;

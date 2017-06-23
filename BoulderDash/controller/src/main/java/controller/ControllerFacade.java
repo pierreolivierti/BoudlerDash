@@ -7,8 +7,7 @@ import java.util.List;
 import model.Example;
 import model.IModel;
 import view.IView;
-import controller.UserOrder;
-import 
+import controller.UserOrder; 
 
 
 /**
@@ -67,27 +66,9 @@ public class ControllerFacade implements IController {
     	}
     }
     
-    @Override
     public void orderPerform(UserOrder userOrder) {
     	if (userOrder != null) {
-    		Direction direction;
-    		switch (userOrder.getOrder()) {
-    		case UP:
-    			direction = Direction.UP;
-    			break;
-    		case RIGHT:
-    			direction = Direction.RIGHT;
-    			break;
-    		case DOWN:
-    			direction = Direction.DOWN;
-    			break;
-    		case LEFT:
-    			direction = Direction.LEFT;
-    			break;
-    		default:
-    			break;
-    		}
-    		player.setDirection(direction);
+    		final IMobile plane = this.model.get
     	}
     }
 }

@@ -4,7 +4,9 @@ import java.awt.event.KeyEvent;
 
 import controller.IController;
 import controller.Order;
+import controller.IUserOrder;
 import controller.UserOrder;
+import controller.ControllerFacade;
 
 public class EventPerformer implements IEventPerformer{
 	private IController orderPerformer;
@@ -14,16 +16,16 @@ public class EventPerformer implements IEventPerformer{
 	} 
 	
 	public void eventPerform(KeyEvent keyCode){
-		
+	
 		final UserOrder userOrder = this.keyCodeToUserOrder(keyCode.getKeyCode());
 		if (userOrder != null) {
 			this.orderPerformer.orderPerform(userOrder);
 		}
 	}
-	
-	private UserOrder keyCodeToUserOrder(int keyCode){
 		
-		switch (keycode) {
+	private UserOrder keyCodeToUserOrder(int keyCode){
+		UserOrder userOrder;
+		switch (keyCode) {
 		case KeyEvent.VK_UP:
 			userOrder = new UserOrder(Order.UP);
 			break;
@@ -36,11 +38,8 @@ public class EventPerformer implements IEventPerformer{
 		case KeyEvent.VK_LEFT:
 			userOrder = new UserOrder(Order.LEFT);
 			break;
-		case KeyEvent.VK_CONTROL:
-			userOrder = new UserOrder(Order.PUSH);
-			break;
 		default:
-			userOrder;
+			userOrder = null;
 		}
 		return userOrder;
 	}

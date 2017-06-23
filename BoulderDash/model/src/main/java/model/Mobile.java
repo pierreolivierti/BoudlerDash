@@ -1,6 +1,6 @@
 package model;
 
-public class Mobile implements IMobile {
+public class Mobile implements IElement {
 	private Dimension dimension;
 	private Direction direction;
 	private IModelFacade model;
