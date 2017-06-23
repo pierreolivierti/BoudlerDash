@@ -1,15 +1,20 @@
 package model;
 
-public class ExitDoor extends Static{
-	private Position position;
-	private Dimension dimension;
+public class ExitDoor extends Static {
+	private static int imgPosX = 13;
+	private static int imgPosY = 1;
 	private boolean isOpen = false;
 	private static String image = "exitdoor.jpg";
 	
-	public ExitDoor(Position position, Dimension dimension) {
-		super(position, dimension, image);
-		this.position = position;
-		this.dimension = dimension;
+	public ExitDoor(Position position) {
+		super(position, imgPosX, imgPosY);
+	}
+	
+	public void state(Map map1) {
+		if(map1.getCountDiamond() == Player.collectDiamond()) {
+			open = true;
+			
+		}
 	}
 	
 	public boolean isOpen() {

@@ -69,6 +69,7 @@ public class ControllerFacade implements IController {
     public void orderPerform(UserOrder userOrder) {
     	if (userOrder != null) {
     		final IMobile plane = this.model.get
+    		final IMobile plane = this.model.get
     	}
     }
 }

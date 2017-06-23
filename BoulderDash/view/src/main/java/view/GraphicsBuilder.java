@@ -14,22 +14,7 @@ public class GraphicsBuilder implements IGraphicsBuilder {
 		this.model = model;
 	}
 	public void applyModelToGraphic(Graphics graphics, ImageObserver observer){
-		
+		for (final )
 	}
 	
-	private void buildEmptyGround(){
-		 
-	}
-	 
-	private void drawMobile(IMobile mobile, Graphics graphics, ImageObserver observer){
-		 
-	}
-	public int getGlobalWidth(){
-		return 0;
-		 
-	}
-	public int getGlobalHeight(){
-		return 0;
-		 
-	}
 }

@@ -2,21 +2,15 @@ package model;
 
 public class Static implements IElement {
 	private Position position;
-	private Dimension dimension;
 	private String image;
 	private IModelFacade model;
 	
-	public Static(Position position, Dimension dimension, String image) {
+	public Static(Position position, int imgPositionX, int imgPositionY) {
 		this.position = position;
-		this.dimension = dimension;
 	}
 	
 	public Position getPosition() {
 		return this.position;
-	}
-	
-	public Dimension getDimension() {
-		return this.dimension;
 	}
 	
 	public void placeInArea() {

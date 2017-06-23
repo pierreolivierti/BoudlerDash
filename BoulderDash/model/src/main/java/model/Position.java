@@ -3,15 +3,13 @@ package model;
 public class Position {
 	private double x;
 	private double y;
-	private double maxX;
-	private double maxY;
+	private double maxX = 1;
+	private double maxY = 1;
 	private Position position;
 	
-	public Position(double x, double y, double maxX, double maxY) {
+	public Position(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.maxX = maxX;
-		this.maxY = maxY;
 	}
 	
 	public Position(Position position) {
