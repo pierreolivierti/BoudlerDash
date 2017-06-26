@@ -41,7 +41,7 @@ public class GameFrame extends JFrame implements KeyListener{
 		ObjectInputStream ois = null;
 		
 		try {
-			final FileInputStream file = new FileInputStream("../model/tab");
+			final FileInputStream file = new FileInputStream("../model/Array");
 			ois = new ObjectInputStream(file);
 			final char charArray[][] = (char[][]) ois.readObject();
 			System.out.println("Test charArray[0][0] = " + charArray[0][0]);

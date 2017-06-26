@@ -89,6 +89,7 @@ public abstract class ExampleDAO extends AbstractDAO {
 	}
 	
 	public static void generateObjectFromMap(int width, int height, String mapCode) {
+		@SuppressWarnings("unused")
 		ModelFacade array = new ModelFacade(width, height, mapCode);
 	}
 	

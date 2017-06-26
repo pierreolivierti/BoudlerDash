@@ -9,6 +9,7 @@ public class ExitDoor extends BoulderDashElement {
 	private static int nbDiamond = 0;
 	public static boolean win;
 	private Position position;
+	@SuppressWarnings("unused")
 	private IGravity gravity;
 	
 	public ExitDoor(Position position) {

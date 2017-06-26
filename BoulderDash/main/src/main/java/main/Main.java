@@ -15,7 +15,7 @@ import view.ViewFacade;
 public abstract class Main {
     public static void main(final String[] args) {
         final ControllerFacade controller = new ControllerFacade(new ViewFacade(null,null), new ModelFacade(0,0,""));
-
+        System.out.println();
         try {
             controller.start();
         } catch (final SQLException exception) {

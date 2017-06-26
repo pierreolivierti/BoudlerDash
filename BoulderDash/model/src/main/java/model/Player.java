@@ -10,15 +10,15 @@ public class Player extends BoulderDashElement {
 	private static int imgPosX = 2;
 	private static int imgPosY = 2;
 	private static String direction;
-	private Position position;
 	private static boolean isAlive;
+	@SuppressWarnings("unused")
 	private IGravity gravity;
+	@SuppressWarnings("unused")
 	private PlayerMove movement;
 	
 	public Player(Position position, String direction) {
 		super(position, imgPosX, imgPosY);
-		this.position = position;
-		this.direction = direction;
+		Player.direction = direction;
 		this.setDirection(direction);
 		this.gravity();
 		this.move();
@@ -60,7 +60,7 @@ public class Player extends BoulderDashElement {
 	}
 	
 	public static void setIsAlive(boolean isAlive) {
-		isAlive = isAlive;
+		Player.isAlive = isAlive;
 	}
 	
 	public static String getDirection() {

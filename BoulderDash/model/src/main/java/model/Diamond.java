@@ -4,7 +4,6 @@ public class Diamond extends BoulderDashElement implements IGravity {
 	private static int imgPosX = 10;
 	private static int imgPosY = 0;
 	private boolean isCollected = false;
-	private Position position;
 	
 	public Diamond(Position position) {
 		super(position, imgPosX, imgPosY);

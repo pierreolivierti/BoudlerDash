@@ -9,10 +9,13 @@ import javax.imageio.ImageIO;
 import model.dao.Map;
 
 public class BoulderDashElement {
+	@SuppressWarnings("unused")
 	private IGravity gravity;
+	@SuppressWarnings("unused")
 	private MapArray map;
 	private Position position;
 	private IModelFacade model;
+	@SuppressWarnings("unused")
 	private IMovement movement;
 	protected BufferedImage image;
 	

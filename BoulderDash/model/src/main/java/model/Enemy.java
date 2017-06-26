@@ -5,15 +5,15 @@ public class Enemy extends BoulderDashElement {
 	private static int imgPosY = 1;
 	private int x;
 	private int y;
-	private boolean isDead;
-	private MapArray map;
+	@SuppressWarnings("unused")
 	private boolean win = false;
+	@SuppressWarnings("unused")
 	private IGravity gravity;
+	@SuppressWarnings("unused")
 	private MoveEnemy movement;
 	
 	public Enemy(Position position, MapArray map) {
 		super(position, imgPosX, imgPosY);
-		this.map = map;
 		this.move(position, map, null);
 		this.gravity(position, map);
 		this.kill(map);
