@@ -13,6 +13,7 @@ import java.util.List;
 import model.dao.ExampleDAO;
 
 public class ModelFacade implements IModelFacade, Serializable {
+	private static final long serialVersionUID = 4104235711353819536L;
 	private char charArray[][];
 	private Object array[][];
 	
@@ -62,7 +63,7 @@ public class ModelFacade implements IModelFacade, Serializable {
 						break;
 						
 					case '7':
-						this.array[j][i] = new Player(new Position(j, i), Direction.UP);
+						this.array[j][i] = new Player(new Position(j, i), "UP");
 						array[j][i] = c;
 						break;
 						
@@ -136,7 +137,7 @@ public class ModelFacade implements IModelFacade, Serializable {
 				this.array[j][i] = new Diamond(new Position(j, i));
 				break;
 			case '7':
-				this.array[j][i] = new Player(new Position(j, i), Direction.UP);
+				this.array[j][i] = new Player(new Position(j, i), "UP");
 				break;
 			default:
 				throw new Exception("Error: character not valid !\n " + c);

@@ -25,7 +25,7 @@ public class GraphicsBuilder implements IGraphicsBuilder {
 	
 	public void drawElement(IBoulderDashElement element, Graphics graphics, ImageObserver observer) {
 		final BufferedImage imageElement = new BufferedImage(16, 16, Transparency.TRANSLUCENT);
-		final Graphics graphicsElement = new imageElement.getGraphics(); 
+		final Graphics graphicsElement = imageElement.getGraphics();
 		
 		graphicsElement.drawImage(element.getImage(), 0, 0, 16, 16, observer);
 		graphics.drawImage(imageElement, element.getPosition().getX(), element.getPosition().getY(), observer);

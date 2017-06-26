@@ -6,10 +6,17 @@ public class Enemy extends BoulderDashElement {
 	private int x;
 	private int y;
 	private boolean isDead;
+	private MapArray map;
+	private boolean win = false;
+	private IGravity gravity;
+	private MoveEnemy movement;
 	
 	public Enemy(Position position, MapArray map) {
 		super(position, imgPosX, imgPosY);
 		this.map = map;
+		this.move(position, map, null);
+		this.gravity(position, map);
+		this.kill(map);
 	}
 	
 	public void getDiamond(MapArray map) {
@@ -18,7 +25,7 @@ public class Enemy extends BoulderDashElement {
 			for(x--; x == x++; x++) {
 				for(y--; x == x++; x++) {
 					if(map.getType(x, y) == "Player") {
-						Player.setIsAlive(false);
+						Player.setIsAlive(true);
 					}
 					map.setType(x, y, '6');
 				}
@@ -41,11 +48,10 @@ public class Enemy extends BoulderDashElement {
 	}
 	
 	public void gravity(Position position, MapArray map) {
-		this.gravity = new Static();
+		this.gravity = new NoGravity();
 	}
 	
-	public void move(Position position, MapArray map, Direction direction) {
-		this.move = new MoveEnnemy();
+	public void move(Position position, MapArray map) {
+		this.movement = new MoveEnemy();
 	}
-	
 }

@@ -21,10 +21,6 @@ public class Diamond extends BoulderDashElement implements IGravity {
 	}
 	
 	public void setCollectedDiamond() {
-		if (array.getType(position.getX(), position.getY()) == "Player" && collected == false) {
-			Exit.setCollectedDiamond();
-			Exit.state(null);
-			collected = true;
-		}
+		
 	}
 }

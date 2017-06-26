@@ -64,7 +64,7 @@ public class MapArray {
 				this.array[j][i] = new Diamond(new Position(j, i));
 				break;
 			case '7':
-				this.array[j][i] = new Player(new Position(j, i), Direction.UP);
+				this.array[j][i] = new Player(new Position(j, i), "UP");
 				break;
 			default:
 				throw new Exception("Error: character not valid !\n " + c);

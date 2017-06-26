@@ -37,21 +37,12 @@ public class BoulderDashElement {
 		return this.model;
 	}
 	
-	/*public void placeInArea(IArea area) {
-		this.position.setMaxX(area.getDimension().getWidth());
-		this.position.setMaxY(area.getDimension().getHeight());
-	}
-
-	public void setModel(IModel model) {
-		this.model = model;
-		this.getPosition().setMaxX(this.getModelFacade().getArea().getDimension().getWidth());
-		this.getPosition().setMaxY(this.getModelFacade().getArea().getDimension().getHeight());
-	}*/
+	// Building image with the position
 	
 	public void buildImage(int imgPosX, int imgPosY) throws IOException {
 		File map = new File(".");
 		System.out.println(map.getCanonicalPath() + "/");
-		BufferedImage imageSource = ImageIO.read(new File(map.getCanonicalFile() + "/Images/BoulderDash.png"));
+		BufferedImage imageSource = ImageIO.read(new File(map.getCanonicalFile() + "/Image/BoulderDash.png"));
 		this.image = (imageSource).getSubimage(imgPosX * 16, imgPosY * 16, 16, 16);
 	}
 	
