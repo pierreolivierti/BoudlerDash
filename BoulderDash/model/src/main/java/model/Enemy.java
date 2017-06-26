@@ -1,6 +1,6 @@
 package model;
 
-public class Enemy extends Mobile {
+public class Enemy extends BoulderDashElement {
 	private static int imgPosX = 16;
 	private static int imgPosY = 1;
 	private int x;
@@ -8,25 +8,44 @@ public class Enemy extends Mobile {
 	private boolean isDead;
 	
 	public Enemy(Position position, MapArray map) {
-		super(position,imgPosX, imgPosY);
-		this.x = position.getX()
-		this.y = position.getY()
-		this.isDead = isDead;
+		super(position, imgPosX, imgPosY);
+		this.map = map;
 	}
 	
-	public void move() {
-		//////////////////////////////////
-		// Check if there is wall before//
-		//////////////////////////////////
-		if (this.direction == Direction.UP) {
-			this.position.setY(this.position.getY()+1);
-		} else if (this.direction == Direction.DOWN) {
-			this.position.setY(this.position.getY()-1);
-		} else if (this.direction == Direction.RIGHT) {
-			this.position.setX(this.position.getX()+1);
-		} else if (this.direction == Direction.LEFT) {
-			this.position.setX(this.position.getX()-1);
+	public void getDiamond(MapArray map) {
+		if(map.getType(x,  y--) == "Player" || map.getType(x,  y++) == "Player" || map.getType(x--, y) == "Player"
+				|| map.getType(x++, y) == "Player" || map.getType(x, y--) == "Rock" || map.getType(x, y--) == "Diamond") {
+			for(x--; x == x++; x++) {
+				for(y--; x == x++; x++) {
+					if(map.getType(x, y) == "Player") {
+						Player.setIsAlive(false);
+					}
+					map.setType(x, y, '6');
+				}
+			}
 		}
+	}
+	
+	public void kill(MapArray map) {
+		if(map.getType(x,  y--) == "Player" || map.getType(x,  y++) == "Player" || map.getType(x--, y) == "Player"
+				|| map.getType(x++, y) == "Player" || map.getType(x, y--) == "Rock" || map.getType(x, y--) == "Diamond") {
+			for(x--; x == x++; x++) {
+				for(y--; x == x++; x++) {
+					if(map.getType(x, y) == "Player" ) {
+						// DEATH
+					}
+					map.setType(x, y, '0');
+				}
+			}
+		}
+	}
+	
+	public void gravity(Position position, MapArray map) {
+		this.gravity = new Static();
+	}
+	
+	public void move(Position position, MapArray map, Direction direction) {
+		this.move = new MoveEnnemy();
 	}
 	
 }

@@ -13,15 +13,8 @@ import view.ViewFacade;
  * @version 1.0
  */
 public abstract class Main {
-
-    /**
-     * The main method.
-     *
-     * @param args
-     *            the arguments
-     */
     public static void main(final String[] args) {
-        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
+        final ControllerFacade controller = new ControllerFacade(new ViewFacade(null,null), new ModelFacade(0,0,""));
 
         try {
             controller.start();

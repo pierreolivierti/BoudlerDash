@@ -2,21 +2,17 @@ package view;
 
 import java.awt.event.KeyEvent;
 
-import controller.IController;
-import controller.Order;
-import controller.IUserOrder;
-import controller.UserOrder;
-import controller.ControllerFacade;
+import model.IOrderPerformer;
+import model.Order;
 
 public class EventPerformer implements IEventPerformer{
-	private IController orderPerformer;
+	private IOrderPerformer orderPerformer;
 
-	public EventPerformer(IController orderPerformer){
+	public EventPerformer(IOrderPerformer orderPerformer){
 		this.orderPerformer = orderPerformer;
 	} 
 	
 	public void eventPerform(KeyEvent keyCode){
-	
 		final UserOrder userOrder = this.keyCodeToUserOrder(keyCode.getKeyCode());
 		if (userOrder != null) {
 			this.orderPerformer.orderPerform(userOrder);
@@ -42,11 +38,5 @@ public class EventPerformer implements IEventPerformer{
 			userOrder = null;
 		}
 		return userOrder;
-	}
-
-	@Override
-	public void eventPerformer(KeyEvent keyCode) {
-		// TODO Auto-generated method stub
-		
 	}
 }

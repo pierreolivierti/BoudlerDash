@@ -1,33 +1,37 @@
 package view;
 
+import java.util.Observable;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
-/**
- * <h1>The Class ViewFacade provides a facade of the View component.</h1>
- *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
- */
-public class ViewFacade implements IView {
+import model.IModelFacade;
+import model.IOrderPerformer;
 
-    /**
-     * Instantiates a new view facade.
-     */
-    public ViewFacade() {
-        super();
-    }
-
-    /*
-     * (non-Javadoc)
-     * @see view.IView#displayMessage(java.lang.String)
-     */
-    @Override
-    public final void displayMessage(final String message) {
-        JOptionPane.showMessageDialog(null, message);
+public class ViewFacade implements IView, Runnable {
+	private GraphicsBuilder graphicsBuilder;
+	private EventPerformer eventPerformer;
+	private Observable observable;
+	private GameFrame gameFrame;
+    
+	public ViewFacade(IOrderPerformer orderPerformer, IModelFacade model) {
+        this.observable = (Observable) model;
+        this.graphicsBuilder = new GraphicsBuilder(model);
+        this.eventPerformer = new EventPerformer(orderPerformer);
+        SwingUtilities.invokeLater(this);
     }
     
-    public void closeAll(){
-    	
-    }
+	@Override
+	public void run() {
+		this.gameFrame = new GameFrame("BoulderDash", this.eventPerformer, this.graphicsBuilder, this.observable);		
+	}
+	@Override
+	public void displayMessage(String message) {
+		JOptionPane.showMessageDialog(null, message);
+	}
+	@Override
+	public void closeAll() {
+		this.gameFrame.dispose();
+	}
+    
 
 }

@@ -5,65 +5,7 @@ public class MapArray {
 	private Object array[][];
 	
 	public MapArray(int width, int height, String string) {
-		int n = 0;
-		char c;
-		this.charArray = new char[width][height];
-		this.array = new Object[width][height];
-		try {
-			for (int j = 0; j < height; j++) {
-				for (int i = 0; i < width; i++) {
-					c = string.charAt(n);
-					switch (c) {
-					case '0':
-						this.array[j][i] = new Background(new Position(j, i));
-						array[j][i] = c;
-						break;
-						
-					case '1':
-						this.array[j][i] = new ExitDoor(new Position(j, i));
-						array[j][i] = c;
-						break;
-						
-					case '2':
-						this.array[j][i] = new Mud(new Position(j, i));
-						array[j][i] = c;
-						break;
-						
-					case '3':
-						this.array[j][i] = new Enemy(new Position(j, i));
-						array[j][i] = c;
-						break;
-					
-					case '4':
-						this.array[j][i] = new Wall(new Position(j, i));
-						array[j][i] = c;
-						break;
-						
-					case '5':
-						this.array[j][i] = new Stone(new Position(j, i));
-						array[j][i] = c;
-						break;
-						
-					case '6':
-						this.array[j][i] = new Diamond(new Position(j, i));
-						array[j][i] = c;
-						break;
-						
-					case '7':
-						this.array[j][i] = new Player(new Position(j, i), Direction.UP);
-						array[j][i] = c;
-						break;
-						
-					default:
-						n++;
-					}
-				}
-			}
-		} catch (Exception e){
-			System.err.println(e.getMessage());
-			System.exit(1);
-			
-		}
+		
 	}
 	
 	public char getChar(int x, int y) {
@@ -110,7 +52,7 @@ public class MapArray {
 				this.array[j][i] = new Mud(new Position(j, i));
 				break;
 			case '3':
-				this.array[j][i] = new Enemy(new Position(j, i), this.array);
+				this.array[j][i] = new Enemy(new Position(j, i), null);
 				break;
 			case '4':
 				this.array[j][i] = new Wall(new Position(j, i));
@@ -122,7 +64,7 @@ public class MapArray {
 				this.array[j][i] = new Diamond(new Position(j, i));
 				break;
 			case '7':
-				this.array[j][i] = new Player(new Position(j, i));
+				this.array[j][i] = new Player(new Position(j, i), Direction.UP);
 				break;
 			default:
 				throw new Exception("Error: character not valid !\n " + c);
@@ -132,11 +74,4 @@ public class MapArray {
 			System.exit(1);
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
 }

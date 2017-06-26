@@ -1,6 +1,6 @@
 package model;
 
-public class Mud extends Static {
+public class Mud extends BoulderDashElement {
 	private static int imgPosX = 13;
 	private static int imgPosY = 1;
 	private int x;

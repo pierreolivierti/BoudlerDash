@@ -1,6 +1,6 @@
 package model;
 
-public class Player extends BoudlerDashElement {
+public class Player extends BoulderDashElement {
 	private static int imgPosX = 2;
 	private static int imgPosY = 2;
 	private Direction direction;
@@ -48,5 +48,13 @@ public class Player extends BoudlerDashElement {
 
 	public void moveLeft(Position position) {
 	
+	}
+	
+	public static int getCollectDiamond() {
+		return 0;
+	}
+	
+	public static boolean getIsAlive() {
+		return false;
 	}
 }

@@ -1,6 +1,7 @@
-package controller;
+package view;
 
-import controller.Order; 
+import model.IUserOrder;
+import model.Order; 
 
 public class UserOrder implements IUserOrder{
 	private final Order order;
@@ -11,7 +12,6 @@ public class UserOrder implements IUserOrder{
 	
 	@Override
 	public Order getOrder() {
-		System.out.println("Hello");
 		return this.order;
 	}
 }

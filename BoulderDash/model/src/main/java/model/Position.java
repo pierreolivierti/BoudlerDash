@@ -24,7 +24,7 @@ public class Position {
 		this.position = position;
 	}
 	
-	public double getX() {
+	public int getX() {
 		return this.x;
 	}
 	
@@ -32,7 +32,7 @@ public class Position {
 		this.x = x;
 	}
 	
-	public double getY() {
+	public int getY() {
 		return this.y;
 	}
 	
@@ -40,7 +40,7 @@ public class Position {
 		this.y = y;
 	}
 	
-	public double getMaxX() {
+	public int getMaxX() {
 		return this.maxX;
 	}
 	
@@ -48,7 +48,7 @@ public class Position {
 		this.maxX = maxX;
 	}
 	
-	public double getMaxY() {
+	public int getMaxY() {
 		return this.maxY;
 	}
 	

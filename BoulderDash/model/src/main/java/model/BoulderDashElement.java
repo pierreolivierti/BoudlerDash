@@ -6,12 +6,15 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class BoulderDashElement implements IBoulderDashElement {
-	private Mobile mobile;
+import model.dao.Map;
+
+public class BoulderDashElement {
+	private IGravity gravity;
 	private MapArray map;
 	private Position position;
+	private IModelFacade model;
+	private IMovement movement;
 	protected BufferedImage image;
-	private IModel model;
 	
 	public BoulderDashElement(Position position, int imgPosX, int imgPosY) {
 		this.position = position;
@@ -22,33 +25,28 @@ public class BoulderDashElement implements IBoulderDashElement {
 		}
 	}
 
-	@Override
 	public Position getPosition() {
-		// TODO Auto-generated method stub
 		return this.position;
 	}
 
 	public BufferedImage getImage() {
-		// TODO Auto-generated method stub
 		return this.image;
 	}
 
-	public void placeInArea(IArea area) {
-		// TODO Auto-generated method stub
+	public IModelFacade getModelFacade() {
+		return this.model;
+	}
+	
+	/*public void placeInArea(IArea area) {
 		this.position.setMaxX(area.getDimension().getWidth());
 		this.position.setMaxY(area.getDimension().getHeight());
 	}
 
 	public void setModel(IModel model) {
-		// TODO Auto-generated method stub
 		this.model = model;
 		this.getPosition().setMaxX(this.getModelFacade().getArea().getDimension().getWidth());
 		this.getPosition().setMaxY(this.getModelFacade().getArea().getDimension().getHeight());
-	}
-	
-	public IModel getModelFacade() {
-		return this.model;
-	}
+	}*/
 	
 	public void buildImage(int imgPosX, int imgPosY) throws IOException {
 		File map = new File(".");
@@ -58,6 +56,10 @@ public class BoulderDashElement implements IBoulderDashElement {
 	}
 	
 	public void gravity(Position position, Map map) {
-		gravity(position, map);
+		this.gravity = new NoGravity();
+	}
+	
+	public void move(Position position, MapArray map, Direction direction) {
+		this.movement = new NoMove();
 	}
 }

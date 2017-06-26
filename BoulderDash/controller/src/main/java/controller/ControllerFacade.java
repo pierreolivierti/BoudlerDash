@@ -2,29 +2,21 @@ package controller;
 
 import java.sql.SQLException;
 
-import model.IModel;
+import model.IModelFacade;
 import view.IView;
 
-
-/**
- * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
- *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
- */
 public class ControllerFacade implements IController {
-    private final IView  view;
-    private final IModel model;
+    private IView  view;
+    private IModelFacade model;
     private boolean isGameOver = false;
     private static int SLEEP_TIME = 100;
     
-    public ControllerFacade(final IView view, final IModel model) {
-        //super();
+    public ControllerFacade(final IView view, final IModelFacade modelFacade) {
         this.view = view;
-        this.model = model;
+        this.model = modelFacade;
     }
 
-    public void start() throws SQLException {
+	public void start() throws SQLException {
     	this.gameLoop();
     	this.view.displayMessage("Game Over...");
     	this.view.closeAll();
@@ -35,12 +27,12 @@ public class ControllerFacade implements IController {
  
     }
     
-    public IModel getModel() {
+    public IModelFacade getModel() {
     	return this.model;
     }
     
-    public void setView() {
-    	
+    public void setView(IView view) {
+    	this.view = view;
     }
     
     private void gameLoop() {
@@ -50,11 +42,6 @@ public class ControllerFacade implements IController {
     		} catch (InterruptedException e) {
     			Thread.currentThread().interrupt();
     		}
-    	}
-    }
-    
-    public void orderPerform(UserOrder userOrder) {
-    	if(userOrder != null) {
     	}
     }
 }
